@@ -1,5 +1,4 @@
-#ifndef IAUNS_GLM_AABB_HPP
-#define IAUNS_GLM_AABB_HPP
+#pragma once
 
 #include <glm/glm.hpp>
 
