@@ -1,7 +1,7 @@
-cpm-glm-aabb
+glm-aabb
 ============
 
-[![Build Status](https://travis-ci.org/iauns/cpm-glm-aabb.png)](https://travis-ci.org/iauns/cpm-glm-aabb)
+(Fork of cpm-glm-aabb for [MyVulkanEngine](https://github.com/hjelmw/MyVulkanPlayground))
 
 Axis aligned bounding box built on top of GLM.
 
