@@ -144,6 +144,22 @@ void AABB::scale(const glm::vec3& s, const glm::vec3& o)
   }
 }
 
+void AABB::transformCorners(glm::mat4 transformMatrix)
+{
+    // Create a new AABB after transform
+    glm::vec3 halfExtents = getDiagonal() / 2.0f;
+    glm::vec3 transformedHalfExtents = glm::vec3(0.0f, 0.0f, 0.0f);
+    for (int i = 0; i < 3; i++)
+    {
+        glm::vec3 transformedVec = transformMatrix[i] * halfExtents[i];
+        transformedHalfExtents += glm::abs(transformedVec);
+    }
+    glm::vec3 transformedCenter = transformMatrix * glm::vec4(getCenter(), 1.0f);
+    
+    mMin = transformedCenter - transformedHalfExtents;
+    mMax = transformedCenter + transformedHalfExtents;
+}
+
 bool AABB::overlaps(const AABB& bb) const
 {
   if (isNull() || bb.isNull())

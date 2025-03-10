@@ -58,6 +58,10 @@ public:
   ///                    be the center of the AABB.
   void scale(const glm::vec3& scale, const glm::vec3& origin);
 
+  /// Apply affine transformation to all corners of AABB
+  /// \param[in]  transform the transform matrix to apply to each corner (scaling, rotation, translation etc)
+  void transformCorners(glm::mat4 transformMatrix);
+
   /// Retrieves the center of the AABB.
   glm::vec3 getCenter() const;
 
